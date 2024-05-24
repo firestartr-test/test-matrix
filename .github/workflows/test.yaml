@@ -13,7 +13,27 @@ jobs:
 
     strategy:
       matrix:
-        node_version: [12.x, 14.x]
+        environments: [
+          {
+            name: "predev",
+            apps: {
+              "tenant/app"
+            }
+          },
+          {
+            name: "pre",
+            apps: {
+              "tenant2/app"
+            }
+          },
+          {
+            name: "pro",
+            apps: {
+              "tenant3/app",
+              "tenant4/app"
+            }
+          }
+        ]
 
     steps:
     - name: Checkout code
@@ -21,4 +41,4 @@ jobs:
 
     - name: Run hello world script
       run: |
-        echo "Hello, World! Running on Node.js version ${{ matrix.node_version }}"
+        echo "Hello, World! Running on Node.js version ${{ matrix.environments.name }}"
