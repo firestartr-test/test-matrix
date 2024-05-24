@@ -22,11 +22,7 @@ jobs:
         environments: 
           {
             "predev": ["tenant/app"]
-          },
-          {
             "pre": ["tenant2/app"]
-          },
-          {
             "pro": ["tenant3/app", "tenant4/app"]
           }
 
