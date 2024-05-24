@@ -10,7 +10,6 @@ on:
 jobs:
   calculate-matrix:
     steps:
-      call-workflow-in-another-repo:
         uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml
   
   build:
