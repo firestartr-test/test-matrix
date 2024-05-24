@@ -1,0 +1,24 @@
+
+name: Hello World Matrix
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node_version: [12.x, 14.x]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run hello world script
+      run: |
+        echo "Hello, World! Running on Node.js version ${{ matrix.node_version }}"
