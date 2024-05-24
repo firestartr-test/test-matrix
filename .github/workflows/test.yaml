@@ -10,7 +10,8 @@ on:
 jobs:
   calculate-matrix:
     steps:
-        uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml
+    - name: foo
+      uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml
   
   build:
     runs-on: ubuntu-latest
