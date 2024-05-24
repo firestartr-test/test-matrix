@@ -20,9 +20,9 @@ jobs:
     strategy:
       matrix:
         environments: 
-          "predev": ["tenant/app"]
-          "pre": ["tenant2/app"]
-          "pro": ["tenant3/app", "tenant4/app"]
+          - predev: ["tenant/app"]
+          - pre: ["tenant2/app"]
+          - pro: ["tenant3/app", "tenant4/app"]
 
     steps:
     - name: Checkout code
