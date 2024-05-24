@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-workflow-in-another-repo:
-    uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml
+    uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml@main
   
   build:
     runs-on: ubuntu-latest
