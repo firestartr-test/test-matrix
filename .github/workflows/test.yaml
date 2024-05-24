@@ -4,8 +4,10 @@ name: Hello World Matrix
 on:
   push:
     branches: [ main ]
+    
   pull_request:
-    branches: [ main ]
+    paths:
+      - 'deployments/**'
 
 jobs:
   call-workflow-in-another-repo:
