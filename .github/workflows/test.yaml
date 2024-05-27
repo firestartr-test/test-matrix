@@ -22,7 +22,7 @@ jobs:
     
     strategy:
       matrix:
-        environments: ${{ needs.get_changes.outputs.changes }}
+        environments: ${{ fromJson(needs.get_changes.outputs.changes) }}
 
     steps:
     - name: Checkout code
