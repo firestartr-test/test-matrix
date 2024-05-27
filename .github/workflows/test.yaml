@@ -13,7 +13,7 @@ jobs:
   call-workflow-in-another-repo:
     uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml@main
     with:
-      path: 'deployments'
+      path: 'sys-services'
 
   build:
     runs-on: ubuntu-latest
