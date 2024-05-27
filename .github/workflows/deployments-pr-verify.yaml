@@ -13,8 +13,8 @@ jobs:
   get_changes:
     uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml@main
     with:
-      path: 'sys-services'
-      is-deployment: false
+      path: 'deployments'
+      is-deployment: true
 
   pr-verify:
     runs-on: ubuntu-latest
