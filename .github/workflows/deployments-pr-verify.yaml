@@ -17,7 +17,6 @@ jobs:
       is-deployment: true
 
   pr-verify:
-    runs-on: ubuntu-latest
     needs: get_changes
     
     strategy:
