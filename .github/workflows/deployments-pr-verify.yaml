@@ -1,5 +1,5 @@
 
-name: Hello World Matrix
+name: Deployments PR verify
 
 on:
   push:
@@ -24,10 +24,4 @@ jobs:
       matrix:
         environments: ${{ fromJson(needs.get_changes.outputs.changes) }}
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Run hello world script
-      run: |
-        echo "Hello, World! Running on Node.js version ${{ matrix.environments.name }}"
+    uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml@main
