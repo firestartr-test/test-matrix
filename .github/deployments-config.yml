@@ -5,6 +5,9 @@ environments:
   dev:
     cluster_name: cbx-aks
     identifier: <client-id|arn>
+  pre:
+    cluster_name: cbx-aks
+    identifier: <client-id|arn>
   pro:
     cluster_name: cbx-aks
     identifier: <client-id|arn>
