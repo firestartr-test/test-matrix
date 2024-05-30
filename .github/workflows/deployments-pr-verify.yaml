@@ -30,4 +30,5 @@ jobs:
     uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-helm.yaml@main
     with:
       apply: false
+      environment: ${{ matrix.environments.name }}
     
