@@ -1,4 +1,7 @@
-provider: azure
+provider:
+  name: azure
+  tenant_id: b
+  subscription_id: a
 helm_registries:
   - cbxacr.azurecr.io
 environments:
