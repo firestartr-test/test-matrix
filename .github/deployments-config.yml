@@ -1,0 +1,16 @@
+provider:
+  kind: azure
+  tenant_id: b
+  subscription_id: a
+helm_registries:
+  - cbxacr.azurecr.io
+environments:
+  dev:
+    cluster_name: cbx-aks
+    identifier: <client-id|arn>
+  pre:
+    cluster_name: cbx-aks
+    identifier: <client-id|arn>
+  pro:
+    cluster_name: cbx-aks
+    identifier: <client-id|arn>

@@ -1,0 +1,34 @@
+
+name: Deployments PR verify
+
+on:
+  push:
+    branches: [ main ]
+    
+  pull_request:
+    paths:
+      - 'deployments/**'
+
+env:
+  AZURE_TENANT_ID: a
+  AZURE_SUBSCRIPTION_ID: b
+
+jobs:
+  get_changes:
+    uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-analyze-changes.yaml@main
+    with:
+      path: 'deployments'
+      is-deployment: true
+
+  pr-verify:
+    needs: get_changes
+
+    strategy:
+      matrix:
+        environments: ${{ fromJson(needs.get_changes.outputs.changes) }}
+
+    uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-helm.yaml@main
+    with:
+      apply: false
+      environment: ${{ matrix.environments.name }}
+    
