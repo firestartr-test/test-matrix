@@ -1,0 +1,10 @@
+provider: azure
+helm_registries:
+  - cbxacr.azurecr.io
+environments:
+  dev:
+    cluster_name: cbx-aks
+    identifier: <client-id|arn>
+  pro:
+    cluster_name: cbx-aks
+    identifier: <client-id|arn>

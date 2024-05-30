@@ -18,11 +18,15 @@ jobs:
 
   pr-verify:
     needs: get_changes
-    
+
     strategy:
       matrix:
         environments: ${{ fromJson(needs.get_changes.outputs.changes) }}
 
     uses: firestartr-test/.reusable_workflows/.github/workflows/state-repo-helm.yaml@main
+    env:
+      AZURE_TENANT_ID: a
+      AZURE_SUBSCRIPTION_ID: b
     with:
       apply: false
+    
