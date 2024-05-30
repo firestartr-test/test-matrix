@@ -1,5 +1,5 @@
 provider:
-  name: azure
+  kind: azure
   tenant_id: b
   subscription_id: a
 helm_registries:
